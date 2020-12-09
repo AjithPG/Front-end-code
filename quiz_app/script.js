@@ -61,6 +61,8 @@ const c = document.getElementById('ans_c');
 const d = document.getElementById('ans_d');
 const submit_btn = document.getElementById('submit_btn');
 
+const infomsg = document.getElementById('info');
+
 
 loadQuiz();
 
@@ -111,6 +113,9 @@ function answerDeselect(){
 //click submit button
 submit_btn.addEventListener('click', () =>{
 
+
+    infomsg.innerHTML="";
+
    const answer =  gotselected();
    if(answer){
 
@@ -130,6 +135,8 @@ submit_btn.addEventListener('click', () =>{
        }
        
       
+} else{
+    infomsg.innerHTML = '* Please select any answer';
 }
 
 });
