@@ -9,4 +9,8 @@ A repository to practice Web development
  
  You can learn how to deal with date object,Math.floor() from this project
   
-2.
+2.Quiz App
+git repo - 
+Live Link - 
+
+Learn functions in javascript
