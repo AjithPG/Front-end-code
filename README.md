@@ -9,8 +9,8 @@ A repository to practice Web development
  
  You can learn how to deal with date object,Math.floor() from this project
   
-2.Quiz App
-git repo - 
-Live Link - 
+2.Quiz App <br>
+git repo - https://github.com/AjithPG/Front-end-code/tree/master/quiz_app <br>
+Live Link - https://qzapp.netlify.app/ <br>
 
 Learn functions in javascript
