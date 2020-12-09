@@ -1,48 +1,46 @@
-
 //array to enter questions and answers
-const quizData = [
-    {
+const quizData = [{
         question: "'OS' computer abbreviation usually means ?",
-        a:'Order of Significance',
-        b:'Open Software',
-        c:'Operating System',
-        d:'Optical Sensor',
-        correct:'c'
+        a: 'Order of Significance',
+        b: 'Open Software',
+        c: 'Operating System',
+        d: 'Optical Sensor',
+        correct: 'c'
     },
     {
         question: "'.MOV' extension refers usually to what kind of file?",
-        a:'Image file',
-        b:'Animation/movie file',
-        c:'Audio file',
-        d:'MS Office document',
-        correct:'b'
+        a: 'Image file',
+        b: 'Animation/movie file',
+        c: 'Audio file',
+        d: 'MS Office document',
+        correct: 'b'
     },
 
     {
         question: "A worldwide network of computers",
-        a:'CPU',
-        b:'Internet',
-        c:'RAM',
-        d:'Network',
-        correct:'b'
+        a: 'CPU',
+        b: 'Internet',
+        c: 'RAM',
+        d: 'Network',
+        correct: 'b'
     },
 
     {
         question: "What does acronym FOSS stand for?",
-        a:'Full Option Sensor System',
-        b:'Follow-On Support Service',
-        c:'Free and Open-Source Software',
-        d:'Fiber Optics Science System',
-        correct:'c'
+        a: 'Full Option Sensor System',
+        b: 'Follow-On Support Service',
+        c: 'Free and Open-Source Software',
+        d: 'Fiber Optics Science System',
+        correct: 'c'
     },
 
     {
         question: "Which of the following is an important step towards the paperless concept?",
-        a:'Doxing',
-        b:'Digitizing',
-        c:'Debugging',
-        d:'Downloading',
-        correct:'d'
+        a: 'Doxing',
+        b: 'Digitizing',
+        c: 'Debugging',
+        d: 'Downloading',
+        correct: 'd'
     }
 
 ];
@@ -68,7 +66,7 @@ loadQuiz();
 
 
 //function to load questions from array
-function loadQuiz(){
+function loadQuiz() {
 
     answerDeselect();
 
@@ -82,14 +80,14 @@ function loadQuiz(){
 
 
 //function to get checked radio button value
-function gotselected(){
+function gotselected() {
 
-    let answer;     
-    answerEls.forEach((answeEl)=>{
+    let answer;
+    answerEls.forEach((answeEl) => {
 
-        if(answeEl.checked){
+        if (answeEl.checked) {
 
-            answer =  answeEl.id;
+            answer = answeEl.id;
         }
 
     });
@@ -99,9 +97,9 @@ function gotselected(){
 }
 
 // function to deseclect checked radio button
-function answerDeselect(){
+function answerDeselect() {
 
-    answerEls.forEach((answeEl)=>{
+    answerEls.forEach((answeEl) => {
 
         answeEl.checked = false;
 
@@ -111,33 +109,31 @@ function answerDeselect(){
 
 
 //click submit button
-submit_btn.addEventListener('click', () =>{
+submit_btn.addEventListener('click', () => {
 
 
-    infomsg.innerHTML="";
+    infomsg.innerHTML = "";
 
-   const answer =  gotselected();
-   if(answer){
+    const answer = gotselected();
+    if (answer) {
 
-    if(answer === quizData[currentQuestion].correct){
-        score++;
+        if (answer === quizData[currentQuestion].correct) {
+            score++;
+        }
+
+        currentQuestion++;
+
+        //check if the quiz is completed
+        if (currentQuestion < quizData.length) {
+            loadQuiz();
+        } else {
+            quiz.innerHTML = `<p class="result">You Score is ${score} out of ${quizData.length} 
+            </p> <button class="submit" onclick=location.reload()>Reload</button>`;
+        }
+
+
+    } else {
+        infomsg.innerHTML = '* Please select any answer';
     }
 
-    currentQuestion++;
-
-    //check if the quiz is completed
-    if(currentQuestion < quizData.length){
-        loadQuiz();
-       }
-       else{
-           quiz.innerHTML = `<p class="result">You have answered ${score}/ ${quizData.length} 
-           Questions</p> <button class="submit" onclick=location.reload()>Reload</button>`;
-       }
-       
-      
-} else{
-    infomsg.innerHTML = '* Please select any answer';
-}
-
 });
-
