@@ -40,6 +40,28 @@ body{
 
 }
 
+@media(max-width:1200px){
+    .quiz_container .quiz_head{
+
+        width:100%;
+        float: left;
+        padding: 25px 45px;
+    
+    
+    }
+}
+
+@media(max-width:1024px){
+    .quiz_container .quiz_head{
+
+        width:100%;
+        float: left;
+        padding: 20px 15px;
+    
+    
+    }
+}
+
 .quiz_container ul{
     list-style: none;
     padding: 0;
@@ -65,6 +87,7 @@ body{
     font-weight: 500px;
     margin-bottom: 20px;
 }
+
 
 .quiz_container .answer{
 
@@ -102,5 +125,21 @@ body{
 
 .answer:hover{
     cursor: pointer;
+}
+
+@media(max-width:1024px){
+
+    .quiz_container h2{
+    
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .quiz_container ul li{
+
+        font-size: .9rem;
+
+    }
+
 }
 
