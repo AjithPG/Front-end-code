@@ -136,6 +136,18 @@ body{
     color: #ff0000;
 }
 
+.footer{
+    position: fixed;
+    bottom: 2px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #8e44ad;
+    font-size: 1rem;
+    line-height: 1rem;
+}
+
 @media(max-width:1024px){
 
     .quiz_container h2{
