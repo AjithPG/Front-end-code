@@ -88,6 +88,12 @@ visibility: hidden;
 
 }
 
+@media(max-width:768px){
+  .form-control small{
+     font-size: 12px;
+  }
+}
+
 .form-control.error small{
   visibility: visible;
 }
