@@ -18,6 +18,12 @@ function updateSelectedSeats(){
   tickets.innerHTML = totalSeats;
 
   total.innerHTML = totalSeats * ticketPrice;
+
+  if(totalSeats !=0){
+    bookTickets.classList.remove('deactive');
+  } else{
+    bookTickets.classList.add('deactive');
+  }
   
 
 }
@@ -42,8 +48,16 @@ theatre.addEventListener('click',(e)=>{
 
 //book tickets
 
+
+
 bookTickets.addEventListener('click',()=>{
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const totalSeats = selectedSeats.length;
-  alert(`You have Booked ${totalSeats} Tickets`);
+  if(totalSeats != 0){
+    alert(`You have Booked ${totalSeats} Tickets`);
+    
+  } else{
+    alert(`Please select a seat`);
+  }
+  
 })
