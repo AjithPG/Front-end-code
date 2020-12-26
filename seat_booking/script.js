@@ -17,7 +17,7 @@ function updateSelectedSeats(){
 
   tickets.innerHTML = totalSeats;
 
-  total.innerHTML = totalSeats * ticketPrice;
+  total.innerHTML = '$' + totalSeats * ticketPrice;
 
   if(totalSeats !=0){
     bookTickets.classList.remove('deactive');
@@ -53,8 +53,12 @@ theatre.addEventListener('click',(e)=>{
 bookTickets.addEventListener('click',()=>{
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const totalSeats = selectedSeats.length;
+ 
+
   if(totalSeats != 0){
-    alert(`You have Booked ${totalSeats} Tickets`);
+
+    
+    alert(`You have Booked ${totalSeats} Tickets for `);
     
   } else{
     alert(`Please select a seat`);
