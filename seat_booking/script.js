@@ -58,7 +58,7 @@ bookTickets.addEventListener('click',()=>{
   if(totalSeats != 0){
 
     
-    alert(`You have Booked ${totalSeats} Tickets for `);
+    alert(`You have Booked ${totalSeats} Tickets`);
     
   } else{
     alert(`Please select a seat`);
